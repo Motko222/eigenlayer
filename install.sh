@@ -17,3 +17,9 @@ mkdir -p build
 go build -o build/eigenlayer cmd/eigenlayer/main.go
 cp ./build/eigenlayer /usr/local/bin/
 eigenlayer
+
+read -p "Insert key name: " name
+eigenlayer operator keys create --key-type ecdsa $name
+eigenlayer operator keys create --key-type bls $name
+read -p "Please mark down address and private keys mentioned above !!! Preass any key to continue..." a
+
