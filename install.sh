@@ -1,7 +1,14 @@
+#!/bin/bash
 
+read -p "This action will wipe current installation, are you sure? " sure
+case $sure in 
+ y|Y) ;;
+ n|N) exit 1 ;;
+ *) exit 1 ;;
+esac
 
-
-sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get update
+sudo apt-get upgrade -y
 sudo apt install docker.io
 docker --version
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -11,6 +18,9 @@ wget https://golang.org/dl/go1.21.4.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.21.4.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 go version
+
+cd ~
+if [ -d ~/eigenlayer ]; then rm -f ~/eigenlayer; fi
 git clone https://github.com/NethermindEth/eigenlayer.git
 cd eigenlayer
 mkdir -p build
