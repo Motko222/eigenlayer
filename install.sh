@@ -7,6 +7,7 @@ case $sure in
  *) exit 1 ;;
 esac
 
+cd ~
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt install docker.io
@@ -16,10 +17,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 wget https://golang.org/dl/go1.21.4.linux-amd64.tar.gz
 tar -C /usr/local -xzf go1.21.4.linux-amd64.tar.gz
+rm go1.21.4.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 go version
 
-cd ~
 if [ -d ~/eigenlayer ]; then rm -f ~/eigenlayer; fi
 git clone https://github.com/NethermindEth/eigenlayer.git
 cd eigenlayer
