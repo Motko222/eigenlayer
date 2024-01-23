@@ -1,7 +1,9 @@
 #!/bin/bash
 
-if [ -f ~/eigenlayer/cli/operator/config/operator-config.yaml ] 
+cd ~/eigenlayer/cli/operator/config
+if [ ! -f operator-config.yaml ] 
 then
- cp ~/scripts/eigenlayer/config/operator-config.yaml.sample ~/eigenlayer/cli/operator/config/operator-config.yaml
+ cp ~/scripts/eigenlayer/config/operator-config.yaml.sample operator-config.yaml
 fi
-nano ~/eigenlayer/cli/operator/config/operator-config.yaml
+
+nano operator-config.yaml
