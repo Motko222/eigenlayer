@@ -3,7 +3,6 @@
 read -p "This action will wipe current installation, are you sure? " sure
 case $sure in 
  y|Y) ;;
- n|N) exit 1 ;;
  *) exit 1 ;;
 esac
 
