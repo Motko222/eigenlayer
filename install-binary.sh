@@ -8,6 +8,6 @@ esac
 
 rm ~/eigenlayer/eigenlayer
 curl -sSfL https://raw.githubusercontent.com/layr-labs/eigenlayer-cli/master/scripts/install.sh | sh -s
-mv ~/bin/eigenlayer ~/eigenlayer
+mv ~/bin/eigenlayer ~/eigenlayer/eigenlayer
 
 echo "Installation done."
